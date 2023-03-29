@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import './screens/Bottom_Bar.dart';
 
 void main() => runApp(MaterialApp(
      debugShowCheckedModeBanner: false,
@@ -42,15 +42,15 @@ void main() => runApp(MaterialApp(
 
        backgroundColor: Colors.white,
 
-       bottomNavigationBar: BottomNavigationBar(
-         backgroundColor: Colors.lightGreen.shade400,
-         items: const [
-           BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet),label:("Wallet"),),
-           BottomNavigationBarItem(icon: Icon(Icons.add_shopping_cart),label:("Cart"),),
-           BottomNavigationBarItem(icon: Icon(Icons.account_circle),label:("Profile"),)
-
-         ],
-       ),
+       // bottomNavigationBar: BottomNavigationBar(
+       //   backgroundColor: Colors.lightGreen.shade400,
+       //   items: const [
+       //     BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet),label:("Wallet"),),
+       //     BottomNavigationBarItem(icon: Icon(Icons.add_shopping_cart),label:("Cart"),),
+       //     BottomNavigationBarItem(icon: Icon(Icons.account_circle),label:("Profile"),)
+       //
+       //   ],
+       // ),
 
        body: Container(
          alignment: Alignment.center,
@@ -72,9 +72,11 @@ void main() => runApp(MaterialApp(
 
        floatingActionButton: FloatingActionButton(onPressed:()=>debugPrint("Tapped"),
        backgroundColor: Colors.lightGreen.shade400,
-         tooltip: 'Search Here',
-         child: const Icon(Icons.search),
+         tooltip: 'Cart',
+         child: const Icon(Icons.add_shopping_cart),
        ),
+       bottomNavigationBar: BottomBar(),
+       floatingActionButtonLocation:  FloatingActionButtonLocation.centerDocked,
      ),
 
     ));

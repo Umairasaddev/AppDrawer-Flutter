@@ -42,6 +42,39 @@ void main() => runApp(MaterialApp(
 
        backgroundColor: Colors.white,
 
+       bottomNavigationBar: BottomNavigationBar(
+         backgroundColor: Colors.lightGreen.shade400,
+         items: const [
+           BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet),label:("Wallet"),),
+           BottomNavigationBarItem(icon: Icon(Icons.add_shopping_cart),label:("Cart"),),
+           BottomNavigationBarItem(icon: Icon(Icons.account_circle),label:("Profile"),)
+
+         ],
+       ),
+
+       body: Container(
+         alignment: Alignment.center,
+         child: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: <Widget>[
+            const Text("Developers",style: TextStyle(fontSize: 19.0,fontWeight: FontWeight.bold,
+             color: Colors.black
+             ),
+             ),
+
+             InkWell(
+               child: const Text("Proceed Payment"),
+               onTap: ()=>debugPrint("Payment Proceeded"),
+             )
+           ],
+         ),
+       ),
+
+       floatingActionButton: FloatingActionButton(onPressed:()=>debugPrint("Tapped"),
+       backgroundColor: Colors.lightGreen.shade400,
+         tooltip: 'Search Here',
+         child: const Icon(Icons.search),
+       ),
      ),
 
     ));
